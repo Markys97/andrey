@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        img{
+            width:200px;
+            height: 200px;
+           
+        }
+        .container-img{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-img">
+        <img src="./makup.png" alt="">
+    </div>
+
+    <script>
+        let img= document.querySelector('img');
+        let container= document.querySelector('.container-img')
+       
+        let posTop= parseInt(getComputedStyle(container).top)
+        let posLeft= parseInt(getComputedStyle(container).left)
+        container.addEventListener('mouseenter',e=>{
+            let random= Math.floor(Math.random() * 100)
+          container.style.top= posTop+random+'px'
+          container.style.left= posLeft+random+'px'
+        })
+    </script>
+</body>
+</html>
